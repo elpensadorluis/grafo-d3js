@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <!-- 
+╔═══════════════════════════════════════════════╗
+║ ███████╗███████╗███╗   ██╗████████╗██╗   ██╗  ║
+║ ██╔════╝██╔════╝████╗  ██║╚══██╔══╝██║   ██║  ║
+║ ███████╗█████╗  ██╔██╗ ██║   ██║   ██║   ██║  ║
+║ ╚════██║██╔══╝  ██║╚██╗██║   ██║   ██║   ██║  ║
+║ ███████║███████╗██║ ╚████║   ██║   ╚██████╔╝  ║
+║ ╚══════╝╚══════╝╚═╝  ╚═══╝   ╚═╝    ╚═════╝   ║
+╚═════════════════════════════ Luis Echenique ══╝ -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" type="text/css" href="./app.css" rel="stylesheet" />
+
+    <script src="//d3js.org/d3.v3.min.js"></script>
+    <!-- <script src="//d3js.org/d3.v4.min.js"></script> -->
+    
+    <meta name="description" content="Prueba de integración de la librería d3.js con javascript en HTML5 y CSS3" />
+    <meta name="keywords" content="html, css, js, javascript, bootstrap, coway's, game of life, d3.js" />
+    <meta name="author" content="Luis Echenique" />
+    
+    <title>Reto Grafo con D3.js</title>
+</head>
+
+<body>
+    <script>
+        var width = window.innerWidth,
+        height = window.innerHeight - 20;
+        
+        var tree = d3.layout.tree()
+        .size([width - (20 * 2), height - (20 * 2)]);
+        
+        var root = {};
+        root.parent = root;
+        root.px = root.x;
+        root.py = root.y;
+        root.valor = 12;
+        root.listo = 0;
+        root.id = 0;
+        root.color = "rgb(14, 116, 199)";
+        root.restado = 0;
+        
+        var contador = 0;
+        var jo = 0;
+        var tictac = 1;
+        var imprimir = 2; //0:resta 1:valida 2:enumera
+        
+        var nodes = tree(root),
+        base = 1,
+        matriz = [11, 9, 6, 1];
+        
+        
+        var diagonal = d3.svg.diagonal();
+        
+        // var svg = d3.select("body").select("svg")
+        //     .attr("width", width)
+        //     .attr("height", height);
+        
+        var svg = d3.select("body").append("svg")
+        .attr("width", width)
+        .attr("height", height)
+        .append("g")
+        .attr("transform", "translate(20,20)");
+        
+        var node = svg.selectAll(".node"),
+        link = svg.selectAll(".link"),
+        ltext = svg.selectAll(".ltext"),
+        text = svg.selectAll(".text");
+        </script>
+
+
+<script src="./app.js"></script>
+</body>
+
+</html>

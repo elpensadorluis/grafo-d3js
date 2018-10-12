@@ -1,0 +1,22 @@
+.node {
+    /* stroke: rgb(14, 116, 199); */
+    stroke-width: 2px;
+    /* font: 10px sans-serif; */
+    /* pointer-events: none; */
+    fill: rgb(255, 255, 255);
+}
+
+.text {
+    font: 10px sans-serif;
+    pointer-events: none;
+    fill: rgb(0, 0, 0);
+}
+
+.link {
+    fill: none;
+    stroke: rgb(0, 109, 33);
+}
+
+.ltext {
+    font: bold 14px sans-serif;
+}
